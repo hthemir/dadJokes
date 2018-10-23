@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dad Jokes</string>
+    <string name="text_bt_more">More!</string>
+    <string name="text_bt_mais">Mais!</string>
+    <string name="text_bt_share">Share!</string>
+</resources>

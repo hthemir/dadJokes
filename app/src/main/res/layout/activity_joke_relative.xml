@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+
+    <data>
+        <variable name="viewModel" type="com.example.rapisodo.mypoc.feature.dadjoke.DadJokeViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_default_margin"
+            android:layout_width="match_parent">
+
+        <TextView
+                android:id="@+id/tv_joke"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/size_text_center"
+                android:gravity="center"
+                android:layout_above="@id/bt_more"
+                android:text="@{viewModel.presentation.joke}"
+                tools:text="Why was 6 afraid of 7? \n\n Because 7 8 9 "/>
+
+        <Button
+                android:id="@+id/bt_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bt_mais"
+                android:text="@string/text_bt_more"
+                android:onClick="@{() -> viewModel.clickGetRandomJoke()}"
+        />
+
+        <Button
+                android:id="@+id/bt_mais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_bt_mais"
+                android:layout_above="@+id/bt_share"
+                android:onClick="@{() -> viewModel.clickGetCharada()}"
+        />
+
+        <Button
+                android:id="@+id/bt_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_bt_share"
+                android:layout_alignParentBottom="true"
+                android:onClick="@{() -> viewModel.clickShare()}"
+        />
+
+
+    </RelativeLayout>
+</layout>
