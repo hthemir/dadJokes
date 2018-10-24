@@ -12,6 +12,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:name=".MyApplication">
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="ca-app-pub-5364425353095108~3821841778"/>
         <activity android:name=".feature.dadjoke.DadJokeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

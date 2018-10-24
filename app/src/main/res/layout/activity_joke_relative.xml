@@ -13,24 +13,43 @@
             android:layout_margin="@dimen/size_default_margin"
             android:layout_width="match_parent">
 
-        <ProgressBar
-                android:id="@+id/pb_loading"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:indeterminateTint="@color/colorPrimary"
-                android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
-                tools:targetApi="lollipop"/>
-
-        <TextView
-                android:id="@+id/tv_joke"
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="@dimen/size_text_center"
-                android:gravity="center"
-                android:layout_above="@id/ll_buttons"
-                android:text="@{viewModel.presentation.joke}"
-                tools:text="Why was 6 afraid of 7? \n\n Because 7 8 9 "/>
+                android:layout_above="@id/ll_buttons">
+
+            <!--adUnitId test ca-app-pub-3940256099942544/6300978111-->
+            <!--adUnitId prd  ca-app-pub-5364425353095108/6305778159-->
+            <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-5364425353095108/6305778159">
+            </com.google.android.gms.ads.AdView>
+
+            <TextView
+                    android:id="@+id/tv_joke"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/size_text_center"
+                    android:gravity="center"
+                    android:text="@{viewModel.presentation.joke}"
+                    tools:text="Why was 6 afraid of 7? \n\n Because 7 8 9 "/>
+
+            <ProgressBar
+                    android:id="@+id/pb_loading"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="50dp"
+                    android:indeterminateTint="@color/colorPrimary"
+                    android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
+                    tools:targetApi="lollipop"/>
+        </RelativeLayout>
 
         <LinearLayout
                 android:id="@+id/ll_buttons"
