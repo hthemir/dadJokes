@@ -4,6 +4,7 @@
 >
 
     <data>
+        <import type="android.view.View"/>
         <variable name="viewModel" type="com.example.rapisodo.mypoc.feature.dadjoke.DadJokeViewModel"/>
     </data>
 
@@ -12,43 +13,65 @@
             android:layout_margin="@dimen/size_default_margin"
             android:layout_width="match_parent">
 
+        <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:indeterminateTint="@color/colorPrimary"
+                android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
+                tools:targetApi="lollipop"/>
+
         <TextView
                 android:id="@+id/tv_joke"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/size_text_center"
                 android:gravity="center"
-                android:layout_above="@id/bt_more"
+                android:layout_above="@id/ll_buttons"
                 android:text="@{viewModel.presentation.joke}"
                 tools:text="Why was 6 afraid of 7? \n\n Because 7 8 9 "/>
 
-        <Button
-                android:id="@+id/bt_more"
+        <LinearLayout
+                android:id="@+id/ll_buttons"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/bt_mais"
-                android:text="@string/text_bt_more"
-                android:onClick="@{() -> viewModel.clickGetRandomJoke()}"
-        />
-
-        <Button
-                android:id="@+id/bt_mais"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/text_bt_mais"
-                android:layout_above="@+id/bt_share"
-                android:onClick="@{() -> viewModel.clickGetCharada()}"
-        />
-
-        <Button
-                android:id="@+id/bt_share"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/text_bt_share"
                 android:layout_alignParentBottom="true"
-                android:onClick="@{() -> viewModel.clickShare()}"
-        />
+                android:layout_height="wrap_content">
 
+            <Button
+                    android:id="@+id/bt_more"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_margin="5dp"
+                    android:text="@string/text_bt_more"
+                    style="@style/contained_button"
+                    android:onClick="@{() -> viewModel.clickGetRandomJoke()}"
+            />
+
+            <Button
+                    android:id="@+id/bt_mais"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_margin="5dp"
+                    android:text="@string/text_bt_mais"
+                    style="@style/contained_button"
+                    android:onClick="@{() -> viewModel.clickGetCharada()}"
+            />
+
+            <Button
+                    android:id="@+id/bt_share"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_margin="5dp"
+                    android:text="@string/text_bt_share"
+                    style="@style/outlined_button"
+                    android:onClick="@{() -> viewModel.clickShare()}"
+            />
+        </LinearLayout>
 
     </RelativeLayout>
 </layout>

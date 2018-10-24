@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="contained_button">
+        <item name="android:background">@drawable/bt_contained_button</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="outlined_button">
+        <item name="android:background">@drawable/bt_outlined_button</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
 </resources>

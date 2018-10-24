@@ -19,7 +19,6 @@ open class DadJokeActivity : BaseDatabindingActivity<ActivityJokeRelativeBinding
             override fun onClickShare(joke: String?) {
                 openShare(joke)
             }
-
         })
 
         compositeDisposable.add(viewModel.getRandomDadJoke().subscribe({}, { _ ->

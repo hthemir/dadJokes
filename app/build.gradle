@@ -83,4 +83,7 @@ dependencies {
     // interceptor
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    // multi state layout
+    implementation 'br.com.zup:multi-state-layout:1.0.3'
 }
