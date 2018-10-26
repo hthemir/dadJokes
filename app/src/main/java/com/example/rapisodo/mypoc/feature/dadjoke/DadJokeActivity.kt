@@ -49,8 +49,10 @@ open class DadJokeActivity : BaseDatabindingActivity<ActivityJokeRelativeBinding
     }
 
     fun startAdmob() {
-        MobileAds.initialize(this, "ca-app-pub-5364425353095108~3821841778");
-        val adRequest = AdRequest.Builder().build()
+//        MobileAds.initialize(this, "ca-app-pub-5364425353095108~3821841778");
+        val adRequest = AdRequest.Builder()
+            .addTestDevice("E444693F3EB2DCC670A267DBB51BA64C")
+            .build()
         dataBinding.adView.loadAd(adRequest)
     }
 
